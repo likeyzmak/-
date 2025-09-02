@@ -2172,7 +2172,7 @@ var Ke = /* @__PURE__ */ __name2((e, t, r) => {
   return typeof e == "function" ? new st(e, t, r) : nt[e] ? new st(nt[e], t, r) : e === "svg" || e === "head" ? (Ce || (Ce = Et("")), new _(e, t, [new st(Ce, { value: e }, r)])) : new _(e, t, r);
 }, "Ke");
 var rn = /* @__PURE__ */ __name2(({ children: e }) => new fr("", { children: e }, Array.isArray(e) ? e : e ? [e] : []), "rn");
-function S(e, t, r) {
+function R(e, t, r) {
   let n;
   if (!t || !("children" in t)) n = Ke(e, t, []);
   else {
@@ -2181,8 +2181,8 @@ function S(e, t, r) {
   }
   return n.key = r, n;
 }
-__name(S, "S");
-__name2(S, "S");
+__name(R, "R");
+__name2(R, "R");
 var Lt = /* @__PURE__ */ __name2((e, t, r) => (n, s) => {
   let i = -1;
   return a(0);
@@ -2845,11 +2845,11 @@ function kn(e) {
     } catch (b) {
       throw b === ve ? new wr(m) : b;
     }
-    g || (r[h] = v.map(([b, R]) => {
+    g || (r[h] = v.map(([b, x]) => {
       const A = /* @__PURE__ */ Object.create(null);
-      for (R -= 1; R >= 0; R--) {
-        const [x, $] = E[R];
-        A[x] = $;
+      for (x -= 1; x >= 0; x--) {
+        const [S, $] = E[x];
+        A[S] = $;
       }
       return [b, A];
     }));
@@ -3050,11 +3050,11 @@ var Or = (Yt = class {
       for (let g = 0, m = s.length; g < m; g++) {
         const v = s[g], E = c(v, T)[u];
         E && (y(E, j, c(v, j)), h ? (c(E, T)["*"] && r.push(...P(this, K, ne).call(this, c(E, T)["*"], e, c(v, j))), r.push(...P(this, K, ne).call(this, E, e, c(v, j)))) : d.push(E));
-        for (let b = 0, R = c(v, oe).length; b < R; b++) {
-          const A = c(v, oe)[b], x = c(v, j) === Se ? {} : { ...c(v, j) };
+        for (let b = 0, x = c(v, oe).length; b < x; b++) {
+          const A = c(v, oe)[b], S = c(v, j) === Se ? {} : { ...c(v, j) };
           if (A === "*") {
             const V = c(v, T)["*"];
-            V && (r.push(...P(this, K, ne).call(this, V, e, c(v, j))), y(V, j, x), d.push(V));
+            V && (r.push(...P(this, K, ne).call(this, V, e, c(v, j))), y(V, j, S), d.push(V));
             continue;
           }
           const [$, ce, te] = A;
@@ -3063,15 +3063,15 @@ var Or = (Yt = class {
           if (te instanceof RegExp) {
             const V = te.exec(Ir);
             if (V) {
-              if (x[ce] = V[0], r.push(...P(this, K, ne).call(this, F, e, c(v, j), x)), Object.keys(c(F, T)).length) {
-                y(F, j, x);
+              if (S[ce] = V[0], r.push(...P(this, K, ne).call(this, F, e, c(v, j), S)), Object.keys(c(F, T)).length) {
+                y(F, j, S);
                 const tt = ((o = V[0].match(/\//)) == null ? void 0 : o.length) ?? 0;
                 (a[tt] || (a[tt] = [])).push(F);
               }
               continue;
             }
           }
-          (te === true || te.test(u)) && (x[ce] = u, h ? (r.push(...P(this, K, ne).call(this, F, e, x, c(v, j))), c(F, T)["*"] && r.push(...P(this, K, ne).call(this, c(F, T)["*"], e, x, c(v, j)))) : (y(F, j, x), d.push(F)));
+          (te === true || te.test(u)) && (S[ce] = u, h ? (r.push(...P(this, K, ne).call(this, F, e, S, c(v, j))), c(F, T)["*"] && r.push(...P(this, K, ne).call(this, c(F, T)["*"], e, S, c(v, j)))) : (y(F, j, S), d.push(F)));
         }
       }
       s = d.concat(a.shift() ?? []);
@@ -3287,15 +3287,15 @@ var yt = /* @__PURE__ */ __name2((e, t, r) => {
         typeof v.tag == "function" && !v.tag[sr] && (we.length > 0 && (v[O][2] = we.map((b) => [b, b.values.at(-1)])), (a = e[5]) != null && a.length && (v[O][3] = e[5].at(-1)));
         let E;
         if (h && h.length) {
-          const b = h.findIndex(B(v) ? (R) => B(R) : v.key !== void 0 ? (R) => R.key === v.key && R.tag === v.tag : (R) => R.tag === v.tag);
+          const b = h.findIndex(B(v) ? (x) => B(x) : v.key !== void 0 ? (x) => x.key === v.key && x.tag === v.tag : (x) => x.tag === v.tag);
           b !== -1 && (E = h[b], h.splice(b, 1));
         }
         if (E) if (B(v)) E.t !== v.t && (E.t = v.t, E.d = true), v = E;
         else {
           const b = E.pP = E.props;
           if (E.props = v.props, E.f || (E.f = v.f || t.f), typeof v.tag == "function") {
-            const R = E[O][2];
-            E[O][2] = v[O][2] || [], E[O][3] = v[O][3], !E.f && ((E.o || E) === v.o || (l = (o = E.tag)[qr]) != null && l.call(o, b, E.props)) && _n(R, E[O][2]) && (E.s = true);
+            const x = E[O][2];
+            E[O][2] = v[O][2] || [], E[O][3] = v[O][3], !E.f && ((E.o || E) === v.o || (l = (o = E.tag)[qr]) != null && l.call(o, b, E.props)) && _n(x, E[O][2]) && (E.s = true);
           }
           v = E;
         }
@@ -3318,10 +3318,10 @@ var yt = /* @__PURE__ */ __name2((e, t, r) => {
       const v = /* @__PURE__ */ __name2(() => Ze([0, false, e[2]], m), "v"), E = Xe.get(m) || [];
       E.push(v), Xe.set(m, E);
       const b = g(h, () => {
-        const R = Xe.get(m);
-        if (R) {
-          const A = R.indexOf(v);
-          if (A !== -1) return R.splice(A, 1), v();
+        const x = Xe.get(m);
+        if (x) {
+          const A = x.indexOf(v);
+          if (A !== -1) return x.splice(A, 1), v();
         }
       });
       if (b) {
@@ -3466,57 +3466,57 @@ var Fe = /* @__PURE__ */ __name2((e, t, r, n, s) => {
   const g = qe[e];
   let m;
   if (g.length > 0) {
-    const R = i.querySelectorAll(e);
-    e: for (const A of R) for (const x of qe[e]) if (A.getAttribute(x) === t[x]) {
+    const x = i.querySelectorAll(e);
+    e: for (const A of x) for (const S of qe[e]) if (A.getAttribute(S) === t[S]) {
       h = A;
       break e;
     }
     if (!h) {
-      const A = g.reduce((x, $) => t[$] === void 0 ? x : `${x}-${$}-${t[$]}`, e);
+      const A = g.reduce((S, $) => t[$] === void 0 ? S : `${S}-${$}-${t[$]}`, e);
       d = !Ue[A], h = Ue[A] || (Ue[A] = (() => {
-        const x = document.createElement(e);
-        for (const $ of g) t[$] !== void 0 && x.setAttribute($, t[$]), t.rel && x.setAttribute("rel", t.rel);
-        return x;
+        const S = document.createElement(e);
+        for (const $ of g) t[$] !== void 0 && S.setAttribute($, t[$]), t.rel && S.setAttribute("rel", t.rel);
+        return S;
       })());
     }
   } else m = i.querySelectorAll(e);
   l = n ? l ?? "" : void 0, n && (u[We] = l);
-  const v = xt((R) => {
+  const v = xt((x) => {
     if (g.length > 0) {
       let A = false;
-      for (const x of i.querySelectorAll(e)) {
-        if (A && x.getAttribute(We) !== l) {
-          i.insertBefore(R, x);
+      for (const S of i.querySelectorAll(e)) {
+        if (A && S.getAttribute(We) !== l) {
+          i.insertBefore(x, S);
           return;
         }
-        x.getAttribute(We) === l && (A = true);
+        S.getAttribute(We) === l && (A = true);
       }
-      i.appendChild(R);
+      i.appendChild(x);
     } else if (m) {
       let A = false;
-      for (const x of m) if (x === R) {
+      for (const S of m) if (S === x) {
         A = true;
         break;
       }
-      A || i.insertBefore(R, i.contains(m[0]) ? m[0] : i.querySelector(e)), m = void 0;
+      A || i.insertBefore(x, i.contains(m[0]) ? m[0] : i.querySelector(e)), m = void 0;
     }
-  }, [l]), E = St(t.ref, (R) => {
+  }, [l]), E = St(t.ref, (x) => {
     var $;
     const A = g[0];
-    if (r === 2 && (R.innerHTML = ""), (d || m) && v(R), !o && !a) return;
-    let x = ue[$ = R.getAttribute(A)] || (ue[$] = new Promise((ce, te) => {
-      R.addEventListener("load", ce), R.addEventListener("error", te);
+    if (r === 2 && (x.innerHTML = ""), (d || m) && v(x), !o && !a) return;
+    let S = ue[$ = x.getAttribute(A)] || (ue[$] = new Promise((ce, te) => {
+      x.addEventListener("load", ce), x.addEventListener("error", te);
     }));
-    a && (x = x.then(a)), o && (x = x.catch(o)), x.catch(() => {
+    a && (S = S.then(a)), o && (S = S.catch(o)), S.catch(() => {
     });
   });
   if (s && f === "render") {
-    const R = qe[e][0];
-    if (t[R]) {
-      const A = t[R], x = ue[A] || (ue[A] = new Promise(($, ce) => {
+    const x = qe[e][0];
+    if (t[x]) {
+      const A = t[x], S = ue[A] || (ue[A] = new Promise(($, ce) => {
         v(h), h.addEventListener("load", $), h.addEventListener("error", ce);
       }));
-      Wn(x);
+      Wn(S);
     }
   }
   const b = { tag: e, type: e, props: { ...u, ref: E }, ref: E };
@@ -3572,10 +3572,10 @@ var ss = /* @__PURE__ */ __name2((e, t) => function(n, s) {
   const i = n.getLayout() ?? rn;
   return e && n.setLayout((a) => e({ ...a, Layout: i }, n)), n.setRenderer(ns(n, i, e)), s();
 }, "ss");
-var is = ss(({ children: e }) => S("html", { lang: "ko", children: [S("head", { children: [S("meta", { charSet: "utf-8" }), S("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }), S("title", { children: "\uC9C1\uC18C \uD37C\uC990" }), S("link", { href: "/static/style.css", rel: "stylesheet" })] }), S("body", { children: [e, S("script", { type: "module", src: "/static/app.js" })] })] }));
+var is = ss(({ children: e }) => R("html", { lang: "ko", children: [R("head", { children: [R("meta", { charSet: "utf-8" }), R("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }), R("title", { children: "\uADC0\uC5EC\uC6B4 \uAC15\uC544\uC9C0 \uCD08\uCF54&\uC1A1\uC774 \uC9C1\uC18C\uD37C\uC990" }), R("meta", { name: "theme-color", content: "#0ea5e9" }), R("link", { rel: "manifest", href: "/manifest.webmanifest" }), R("link", { href: "/static/style.css", rel: "stylesheet" })] }), R("body", { children: [e, R("script", { type: "module", src: "/static/app.js" })] })] }));
 var Pt = new Cr();
 Pt.use(is);
-Pt.get("/", (e) => e.render(S("main", { class: "container", children: [S("header", { class: "top", children: [S("h1", { children: "\uC9C1\uC18C \uD37C\uC990" }), S("div", { class: "controls", children: [S("label", { children: ["\uB09C\uC774\uB3C4", S("select", { id: "difficulty", children: [S("option", { value: "3", children: "3 \xD7 3" }), S("option", { value: "4", selected: true, children: "4 \xD7 4" }), S("option", { value: "6", children: "6 \xD7 6" }), S("option", { value: "8", children: "8 \xD7 8" })] })] }), S("button", { id: "shuffle", children: "\uC11E\uAE30" }), S("button", { id: "peek", children: "\uC6D0\uBCF8 \uBCF4\uAE30" }), S("button", { id: "reset", children: "\uB9AC\uC14B" })] }), S("div", { class: "stats", children: [S("span", { children: ["\uC2DC\uAC04: ", S("b", { id: "time", children: "00:00" })] }), S("span", { children: ["\uC774\uB3D9: ", S("b", { id: "moves", children: "0" })] })] })] }), S("section", { class: "boards", children: [S("div", { class: "board", id: "board" }), S("div", { class: "preview", children: S("img", { id: "preview", alt: "\uC6D0\uBCF8" }) })] }), S("footer", { class: "bottom", children: S("label", { class: "imgurl", children: ["\uC774\uBBF8\uC9C0 URL", S("input", { type: "url", id: "imgUrl", placeholder: "\uC774\uBBF8\uC9C0 \uC8FC\uC18C \uBD99\uC5EC\uB123\uAE30" }), S("button", { id: "loadImg", children: "\uBD88\uB7EC\uC624\uAE30" })] }) })] })));
+Pt.get("/", (e) => e.render(R("main", { class: "container", children: [R("header", { class: "top", children: [R("h1", { children: "\uC9C1\uC18C \uD37C\uC990" }), R("div", { class: "controls", children: [R("label", { children: ["\uB09C\uC774\uB3C4", R("select", { id: "difficulty", children: [R("option", { value: "3", children: "3 \xD7 3" }), R("option", { value: "4", selected: true, children: "4 \xD7 4" }), R("option", { value: "6", children: "6 \xD7 6" }), R("option", { value: "8", children: "8 \xD7 8" })] })] }), R("button", { id: "shuffle", children: "\uC11E\uAE30" }), R("button", { id: "peek", children: "\uC6D0\uBCF8 \uBCF4\uAE30" }), R("button", { id: "reset", children: "\uB9AC\uC14B" })] }), R("div", { class: "stats", children: [R("span", { children: ["\uC2DC\uAC04: ", R("b", { id: "time", children: "00:00" })] }), R("span", { children: ["\uC774\uB3D9: ", R("b", { id: "moves", children: "0" })] })] })] }), R("section", { class: "boards", children: [R("div", { class: "board", id: "board" }), R("div", { class: "preview", children: R("img", { id: "preview", alt: "\uC6D0\uBCF8" }) })] }), R("footer", { class: "bottom", children: R("label", { class: "imgurl", children: ["\uC774\uBBF8\uC9C0 URL", R("input", { type: "url", id: "imgUrl", placeholder: "\uC774\uBBF8\uC9C0 \uC8FC\uC18C \uBD99\uC5EC\uB123\uAE30" }), R("button", { id: "loadImg", children: "\uBD88\uB7EC\uC624\uAE30" })] }) })] })));
 var Wt = new Cr();
 var as = Object.assign({ "/src/index.tsx": Pt });
 var Hr = false;

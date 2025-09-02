@@ -1,0 +1,13 @@
+{
+  "name": "귀여운 강아지 초코&송이 직소퍼즐",
+  "short_name": "초코&송이 퍼즐",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0ea5e9",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    { "src": "/static/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/static/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

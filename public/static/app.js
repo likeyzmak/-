@@ -1,6 +1,7 @@
 // 직소 퍼즐 게임 - Pointer Events 지원 (마우스/터치 공통)
 // 기본 이미지
-const DEFAULT_IMAGE = 'https://page.gensparksite.com/v1/base64_upload/2b25ff802f209bc998bd8f4a003fe11a';
+// 오프라인 대응을 위해 기본 이미지를 프로젝트 내부 파일로 변경
+const DEFAULT_IMAGE = '/static/default.jpg';
 
 const boardEl = document.getElementById('board');
 const previewImg = document.getElementById('preview');
@@ -209,9 +210,13 @@ loadImgBtn?.addEventListener('click', ()=>{
   if(url) applyImage(url);
 });
 
-// 초기화
+// 초기화 및 서비스워커 등록
 window.addEventListener('load', ()=>{
   imgUrlInput.value = DEFAULT_IMAGE;
+  // 서비스워커 등록(PWA)
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(()=>{});
+  }
   // 최초 진입 시 자동 섞기 + 즉시 플레이 가능
   changeDifficulty(difficultySel?.value || '4', true);
 });
